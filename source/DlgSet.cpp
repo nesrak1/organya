@@ -12,11 +12,11 @@
 #include    <commctrl.h>
 #include "Mouse.h"
 #include "rxoFunction.h"
+#include "util.h"
 
 #define PI 3.14159265358979323846
 
 #define NUMGRID		8
-#define NUMGRIDA		11
 #define MAXWAVE		100
 #define maxx(a, b) ((a) > (b) ? (a) : (b))
 
@@ -26,7 +26,7 @@ extern HWND hDlgEZCopy;
 
 
 typedef struct{
-	char name[20];
+	char name[25];
 	char line;
 	char dot;
 }GRID;
@@ -40,9 +40,10 @@ GRID grid[NUMGRIDA] = {
 	{"３拍：６分割",3,6},
 	{"４拍：２分割",4,2},
 	{"４拍：８分割",4,8},
-	{"４拍：12分割",4,12},
+	{"４拍：１２分割",4,12},
 	{"５拍：４分割",5,4},
 };
+constexpr int NUMGRIDA = sizeof(grid) / sizeof(GRID);
 //IDS_GRID_STRINGに!区切りで追加すること。ここの文字列はﾀﾞﾐｰです。
 
 int check_pipi[NUMGRID] ={
@@ -113,14 +114,14 @@ void SetText(HWND hdwnd, int ID_TEXTBOX, char *str)
 
 void SetText(HWND hdwnd, int ID_TEXTBOX, int iValue)
 {
-	char str[128] = {NULL};
+	char str[128] = {0};
 	itoa(iValue,str,10);
 	SetDlgItemText(hdwnd, ID_TEXTBOX , str);
 }
 
 int GetText(HWND hdwnd, int ID_TEXTBOX)
 {
-	char str[32] = {NULL};
+	char str[32] = {0};
 	GetDlgItemText(hdwnd,ID_TEXTBOX,str,31);
 	int r;
 	r = atoi(str);
@@ -139,7 +140,7 @@ void EnableDialogWindow(int iValue = TRUE)
 //ダイアログ内容の初期化
 void InitSettingDialog(HWND hdwnd)
 {
-	char str[128] = {NULL};
+	char str[128] = {0};
 	long i,a;
 	MUSICINFO mi;
 	org_data.GetMusicInfo(&mi);
@@ -230,7 +231,7 @@ void InitSettingDialog(HWND hdwnd)
 //ウエイトの設定
 BOOL SetWait(HWND hdwnd, MUSICINFO *mi)
 {
-	char str[128] = {NULL};
+	char str[128] = {0};
 	long a;
 	GetDlgItemText(hdwnd,IDD_SETWAIT,str,7);
 	a = atol(str);
@@ -254,7 +255,7 @@ BOOL SetGrid(HWND hdwnd,MUSICINFO *mi)
 		mi->dot = grid[i].dot;
 		mi->line = grid[i].line;
 	}else{
-		char str[128] = {NULL};
+		char str[128] = {0};
 		long a,b;
 		GetDlgItemText(hdwnd,IDD_GRIDEDIT1,str,3);
 		a = atol(str);
@@ -280,7 +281,7 @@ BOOL SetGrid(HWND hdwnd,MUSICINFO *mi)
 //リピート範囲の設定
 BOOL SetRepeat(HWND hdwnd, MUSICINFO *mi)
 {
-	char str[128] = {NULL};
+	char str[128] = {0};
 	long a,b;
 	GetDlgItemText(hdwnd,IDD_REP_MEAS,str,7);
 	a = atol(str);
@@ -317,7 +318,7 @@ int freqbox[MAXTRACK] = {
 };
 BOOL SetTrackFreq(HWND hdwnd, MUSICINFO *mi)
 {
-	char str[128] = {NULL};
+	char str[128] = {0};
 	unsigned short a;	
 	for(int i = 0; i < MAXMELODY; i++){
 		GetDlgItemText(hdwnd,freqbox[i],str,7);
@@ -352,7 +353,7 @@ BOOL CALLBACK DialogSetting(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lPar
 {
 	int i, j;
 	int iBPM, iWAIT;
-	char str[128] = {NULL};
+	char str[128] = {0};
 	RECT rect = {64,0,WWidth,WHeight};//更新する領域
 	MUSICINFO mi,mg;
 	switch(message){
@@ -799,7 +800,7 @@ int leftbox[MAXTRACK] = {
 BOOL CALLBACK DialogNoteUsed(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	int i;
-	char str[10] = {NULL};
+	char str[10] = {0};
 	long u,l;
 //	unsigned short a;
 	switch(message){
@@ -826,7 +827,7 @@ BOOL CALLBACK DialogNoteUsed(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lPa
 
 BOOL CALLBACK DialogMemo(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-//	char str[10] = {NULL};
+//	char str[10] = {0};
 	switch(message){
 	case WM_INITDIALOG://ダイアログが呼ばれた
 		EnableDialogWindow(FALSE);
@@ -973,7 +974,7 @@ bool GetSetPVInitFile(HWND hdwnd, int IsSave, int iQuiet)
 
 BOOL CALLBACK DialogDefault(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	char str[32] = {NULL};
+	char str[32] = {0};
 	int i,a,b;
 	switch(message){
 	case WM_INITDIALOG://ダイアログが呼ばれた
@@ -1074,7 +1075,7 @@ BOOL CALLBACK DialogDefault(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lPar
 }
 BOOL CALLBACK DialogHelp(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-//	char str[10] = {NULL};
+//	char str[10] = {0};
 //	char HelpString[10000]; //とりあえず10kB
 	char *HelpString; //A 2010.9.22 ヘルプファイルの容量拡大に伴い、動的確保に変更。
 	HRSRC hrscr;
@@ -1099,8 +1100,8 @@ BOOL CALLBACK DialogHelp(HWND hdwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		cc = (char*)LockResource(LoadResource(NULL, hrscr));// リソースのアドレスを取得
 		cf = HelpString; ce = cc;
 		do{
-			if(*ce=='¥n'){ //改行コード変換（ラインフィードを加えないといけないらしい）
-				*cf='¥r';
+			if(*ce=='\n'){ //改行コード変換（ラインフィードを加えないといけないらしい）
+				*cf='\r';
 				cf++;
 			}
 			*cf = *ce;

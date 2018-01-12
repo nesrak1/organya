@@ -4,6 +4,7 @@
 #include "OrgData.h"
 #include <stdio.h>
 #include "resource.h"
+#include "util.h"
 //スクロールバーの移動値
 #define MAXHORZRANGE	256
 #define MAXVERTRANGE	(72-12)//8オクターブ

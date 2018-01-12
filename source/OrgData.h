@@ -82,7 +82,7 @@ typedef struct OrgData{
 		BOOL NoteAlloc(unsigned short note_num);//指定の数だけNoteDataの領域を確保
 		void ReleaseNote(void);//NoteDataを開放
 		NOTELIST *SearchNote(NOTELIST *np);//未使用NOTEの検索
-		void OrgData::TouchKeyboard(unsigned char y);//鍵盤に触れる
+		void TouchKeyboard(unsigned char y);//鍵盤に触れる
 		BOOL SetNote(long x,unsigned char y, int DragMode = 0);//音符を配置
 		BOOL CutNote(long x,unsigned char y);//音符のカット
 		BOOL SetPan(long x,unsigned char y);//パン音符を配置
@@ -114,8 +114,8 @@ typedef struct OrgData{
 		void SetPlayPointer(long x);//再生ポインターを指定の位置に設定
 		//以下はファイル関係
 		unsigned short GetNoteNumber(char track,NOTECOPY *nc);
-		BOOL OrgData::SaveMusicData(void);
-		BOOL OrgData::LoadMusicData(void);
+		BOOL SaveMusicData(void);
+		BOOL LoadMusicData(void);
 		int FileCheckBeforeLoad(char *checkfile); //ファイルがロード可能であれば0異常であれば1を返す。ﾃﾞｰﾀロードはされない。 2014.05.22
 		//以下は編集関係
 		BOOL DelateNoteData(PARCHANGE *pc);
