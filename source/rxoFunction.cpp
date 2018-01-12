@@ -965,4 +965,3 @@ int AllocMessageStringBuffer(void)
 	//for(ptr = MessageString[111]; *ptr != 0; ptr++)if(*ptr == '!')*ptr = 0;
 	return 0;
 }
-
