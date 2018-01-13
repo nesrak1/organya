@@ -214,11 +214,11 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR dropfile
 	wc.cbClsExtra    = 0;
 	wc.cbWndExtra    = 0;
 	wc.hInstance     = hInst = hInstance;
-	wc.hIcon         = LoadIcon(hInst,"ICON");//大きいアイコン
-	wc.hIconSm       = LoadIcon(hInst,"ICON");//小さいアイコン
-	wc.hCursor       = LoadCursor(hInst,"CURSOR");//カーソル
+	wc.hIcon         = LoadIcon(hInst,"ICO");//大きいアイコン
+	wc.hIconSm       = LoadIcon(hInst,"ICO");//小さいアイコン
+	wc.hCursor       = LoadCursor(hInst,"CURS");//カーソル
 	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);//ウインドウの気本色
-	wc.lpszMenuName  = "ORGANYAMENU";//メニ	ュー
+	wc.lpszMenuName  = "ORGANYAMENU";//メニュー
 	wc.lpszClassName = lpszName;
 
 	int wnd_width;///ここでWindowの広さを指定します。
