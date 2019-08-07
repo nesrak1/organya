@@ -12,7 +12,7 @@
 //
 // Generated from the TEXTINCLUDE 2 resource.
 //
-#include "afxres.h"
+#include <windows.h>
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -20,11 +20,8 @@
 /////////////////////////////////////////////////////////////////////////////
 // 日本語 resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
-#ifdef _WIN32
+#if !defined(AFX_RESOURCE_DLL)// || defined(AFX_TARG_ENU)
 LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
-#pragma code_page(932)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -65,32 +62,32 @@ CURS                    CURSOR  "bitmap\\cursor.cur"
 
 DLGSETTING DIALOGEX 0, 0, 151, 223
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "曲設定"
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+CAPTION "Song Settings"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    GROUPBOX        "テンポ(&T)",IDC_STATIC,4,1,140,46
-    RTEXT           "*ｳｪｲﾄ(&W)",IDC_STATIC,8,13,29,10
+    GROUPBOX        "&Tempo",IDC_STATIC,4,1,140,46
+    RTEXT           "&Wait",IDC_STATIC,8,13,29,10
     EDITTEXT        IDD_SETWAIT,38,12,22,12,ES_RIGHT | ES_NUMBER
     PUSHBUTTON      "←",IDC_BTN1,64,12,11,12,0,WS_EX_STATICEDGE
     PUSHBUTTON      "→",IDC_BTN2,75,12,11,12,0,WS_EX_STATICEDGE
-    RTEXT           "BPM(&B)",IDC_STATIC,92,13,22,10
+    RTEXT           "&BPM",IDC_STATIC,92,13,22,10
     EDITTEXT        IDC_BPM,116,12,22,12,ES_AUTOHSCROLL | ES_NUMBER
-    GROUPBOX        "リピート範囲(&R)",IDC_STATIC,4,53,68,42
-    LTEXT           "あたま",IDC_STATIC,18,67,20,8
+    GROUPBOX        "&Repeat Range",IDC_STATIC,4,53,68,42
+    LTEXT           "Start",IDC_STATIC,18,67,20,8
     EDITTEXT        IDD_REP_MEAS,45,65,16,12,ES_NUMBER
-    LTEXT           "おわり",IDC_STATIC,18,80,20,8
+    LTEXT           "End",IDC_STATIC,18,80,20,8
     EDITTEXT        IDD_END_MEAS,45,79,16,12,ES_NUMBER
-    GROUPBOX        "表示グリッド(&G)",IDC_STATIC,4,99,68,120
+    GROUPBOX        "&Grid Display",IDC_STATIC,4,99,68,120
     LISTBOX         IDD_LB1,10,110,58,78,LBS_NOINTEGRALHEIGHT | 
                     LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "☆自由設定",IDC_STATIC,7,191,40,8
+    LTEXT           "* Optional Settings",IDC_STATIC,7,191,40,8
     EDITTEXT        IDD_GRIDEDIT1,7,202,15,13,ES_RIGHT | ES_AUTOHSCROLL | 
                     ES_NUMBER
-    LTEXT           "拍子",IDC_STATIC,23,205,15,8
+    LTEXT           "Tempo (Beat)",IDC_STATIC,23,205,15,8
     EDITTEXT        IDD_GRIDEDIT2,39,202,15,13,ES_RIGHT | ES_AUTOHSCROLL | 
                     ES_NUMBER
-    LTEXT           "分割",IDC_STATIC,56,205,15,8
-    GROUPBOX        "周波数（1000）",IDC_STATIC,76,53,49,142
+    LTEXT           "Step",IDC_STATIC,56,205,15,8
+    GROUPBOX        "Freq.（1000）",IDC_STATIC,76,53,49,142
     LTEXT           "１",IDC_STATIC,81,66,8,8
     EDITTEXT        IDD_SETFREQ0,91,63,28,12,ES_RIGHT | ES_NUMBER
     LTEXT           "２",IDC_STATIC,81,82,8,8
@@ -126,19 +123,19 @@ BEGIN
                     132,180,8,8
     DEFPUSHBUTTON   "Ok!",IDOK,76,201,39,18
     PUSHBUTTON      "No!",IDCANCEL,117,201,29,18
-    LTEXT           "ｳｪｲﾄ値を入力してください。¥nBPMは換算用のオマケ機能です。",
+    LTEXT           "Enter the wait value.\nBPM conversion is informational only.", //The BPM conversion is an extra feature
                     IDC_STATIC,13,27,122,17
 END
 
 PLAYER DIALOGEX 405, 465, 171, 20
 STYLE WS_POPUP | WS_VISIBLE | WS_BORDER
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    PUSHBUTTON      "再生",IDC_PLAY,60,2,23,16,BS_BITMAP | BS_CENTER | 
+    PUSHBUTTON      "Play",IDC_PLAY,60,2,23,16,BS_BITMAP | BS_CENTER | 
                     BS_VCENTER
-    PUSHBUTTON      "停止",IDC_STOP,84,2,23,16,BS_BITMAP | BS_CENTER | 
+    PUSHBUTTON      "Stop",IDC_STOP,84,2,23,16,BS_BITMAP | BS_CENTER | 
                     BS_VCENTER
-    PUSHBUTTON      "始め",IDC_START,8,2,15,16,BS_BITMAP | BS_CENTER | 
+    PUSHBUTTON      "Start",IDC_START,8,2,15,16,BS_BITMAP | BS_CENTER | 
                     BS_VCENTER
     EDITTEXT        IDE_VIEWXPOS,150,3,20,15,ES_CENTER | ES_READONLY | 
                     ES_NUMBER,WS_EX_RIGHT
@@ -153,7 +150,7 @@ END
 
 TRACK DIALOGEX 200, 465, 229, 36
 STYLE WS_POPUP | WS_VISIBLE | WS_BORDER
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     PUSHBUTTON      "1",IDC_TRACK0,20,2,8,14,BS_BITMAP
     PUSHBUTTON      "2",IDC_TRACK1,28,2,8,14,BS_BITMAP
@@ -211,7 +208,7 @@ END
 DLGWAVE DIALOGEX 0, 0, 583, 409
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "波形選択"
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     LISTBOX         IDD_SETFREQ0,4,36,44,155,LBS_NOINTEGRALHEIGHT | 
                     LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
@@ -245,7 +242,7 @@ BEGIN
                     LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
     LISTBOX         IDD_SETFREQ15,317,203,44,185,LBS_NOINTEGRALHEIGHT | 
                     LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "ﾘｽﾄﾎﾞｯｸｽの高さ変更(&L)",IDC_DRUM,364,389,81,13
+    PUSHBUTTON      "&Listbox Height",IDC_DRUM,364,389,81,13
     EDITTEXT        IDD_SETFREQx0,9,8,23,12,ES_RIGHT | ES_NUMBER
     EDITTEXT        IDD_SETFREQx1,54,8,23,12,ES_RIGHT | ES_NUMBER
     EDITTEXT        IDD_SETFREQx2,97,8,23,12,ES_RIGHT | ES_NUMBER
@@ -270,40 +267,40 @@ BEGIN
                     WS_TABSTOP,303,9,8,8
     CONTROL         "",IDC_CHECK_PIPIx7,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,347,9,8,8
-    PUSHBUTTON      "reset",VS_SLIDER_RESET,461,3,22,16,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Reset",VS_SLIDER_RESET,461,3,22,16,0,WS_EX_CLIENTEDGE
     CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
                     WS_TABSTOP,432,27,138,20
     DEFPUSHBUTTON   "Go!",VS_VERSION_INFO,490,3,47,16
     PUSHBUTTON      "Exit!",IDCANCEL,540,3,36,16
-    CTEXT           "[１]",IDC_LABEL_TRACK_1,12,24,16,8
-    CTEXT           "２",IDC_LABEL_TRACK_2,56,24,16,8
-    CTEXT           "３",IDC_LABEL_TRACK_3,100,24,16,8
-    CTEXT           "４",IDC_LABEL_TRACK_4,144,24,16,8
-    CTEXT           "５",IDC_LABEL_TRACK_5,193,24,16,8
-    CTEXT           "６",IDC_LABEL_TRACK_6,237,24,16,8
-    CTEXT           "７",IDC_LABEL_TRACK_7,281,24,16,8
-    CTEXT           "８",IDC_LABEL_TRACK_8,325,24,16,8
-    CTEXT           "Ｑ",IDC_LABEL_TRACK_Q,12,394,16,8
-    CTEXT           "Ｗ",IDC_LABEL_TRACK_W,56,394,16,8
-    CTEXT           "Ｅ",IDC_LABEL_TRACK_E,100,394,16,8
-    CTEXT           "Ｒ",IDC_LABEL_TRACK_R,144,394,16,8
-    CTEXT           "Ｔ",IDC_LABEL_TRACK_T,193,394,16,8
-    CTEXT           "Ｙ",IDC_LABEL_TRACK_Y,237,394,16,8
-    CTEXT           "Ｕ",IDC_LABEL_TRACK_U,281,394,16,8
-    CTEXT           "Ｉ",IDC_LABEL_TRACK_I,325,394,16,8
+    CTEXT           "[1]",IDC_LABEL_TRACK_1,12,24,16,8
+    CTEXT           "2",IDC_LABEL_TRACK_2,56,24,16,8
+    CTEXT           "3",IDC_LABEL_TRACK_3,100,24,16,8
+    CTEXT           "4",IDC_LABEL_TRACK_4,144,24,16,8
+    CTEXT           "5",IDC_LABEL_TRACK_5,193,24,16,8
+    CTEXT           "6",IDC_LABEL_TRACK_6,237,24,16,8
+    CTEXT           "7",IDC_LABEL_TRACK_7,281,24,16,8
+    CTEXT           "8",IDC_LABEL_TRACK_8,325,24,16,8
+    CTEXT           "Q",IDC_LABEL_TRACK_Q,12,394,16,8
+    CTEXT           "W",IDC_LABEL_TRACK_W,56,394,16,8
+    CTEXT           "E",IDC_LABEL_TRACK_E,100,394,16,8
+    CTEXT           "R",IDC_LABEL_TRACK_R,144,394,16,8
+    CTEXT           "T",IDC_LABEL_TRACK_T,193,394,16,8
+    CTEXT           "Y",IDC_LABEL_TRACK_Y,237,394,16,8
+    CTEXT           "U",IDC_LABEL_TRACK_U,281,394,16,8
+    CTEXT           "I",IDC_LABEL_TRACK_I,325,394,16,8
     LTEXT           "Melody",IDC_STATIC,32,24,24,8
     LTEXT           "Drums",IDC_STATIC,32,394,24,8
     LTEXT           "Note",IDC_NOTE,415,37,15,8
     CONTROL         "WAVE100",IDC_WAVE100,"Static",SS_BITMAP,364,48,14,15,
                     WS_EX_STATICEDGE
-    LTEXT           "波形一覧",IDC_STATIC,369,36,36,12
+    LTEXT           "Waweform Table",IDC_STATIC,369,36,36,12
     LTEXT           "←freq && pipi",IDC_STATIC,363,9,51,12
 END
 
 DLGDELETE DIALOG DISCARDABLE  0, 0, 78, 51
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "範囲消去"
-FONT 9, "ＭＳ Ｐゴシック"
+FONT 9, "MS Shell Dlg"
 BEGIN
     EDITTEXT        IDE_DELTRACK,4,16,20,12
     EDITTEXT        IDE_DELFROM,28,16,20,12,ES_NUMBER
@@ -317,8 +314,8 @@ END
 
 DLGCOPY DIALOG DISCARDABLE  0, 0, 118, 101
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
-CAPTION "コピー"
-FONT 9, "ＭＳ Ｐゴシック"
+CAPTION "Copy"
+FONT 9, "MS Shell Dlg"
 BEGIN
     EDITTEXT        IDE_TRACK1,8,24,12,12
     EDITTEXT        IDE_MEAS1_1,28,24,16,12,ES_NUMBER
@@ -336,21 +333,21 @@ BEGIN
     LTEXT           "Beat",IDC_STATIC,48,12,16,8
     LTEXT           "Meas",IDC_STATIC,72,12,16,8
     LTEXT           "Beat",IDC_STATIC,94,12,16,8
-    LTEXT           "〜",IDC_STATIC,62,25,8,12
-    LTEXT           "回数",IDC_STATIC,72,65,15,8
-    GROUPBOX        "コピー元",IDC_STATIC,4,0,110,41
-    GROUPBOX        "コピー先",IDC_STATIC,4,44,64,37
+    LTEXT           "~",IDC_STATIC,62,25,8,12
+    LTEXT           "Times",IDC_STATIC,72,65,15,8
+    GROUPBOX        "Copy Start",IDC_STATIC,4,0,110,41
+    GROUPBOX        "Copy End",IDC_STATIC,4,44,64,37
     LTEXT           "Track",IDC_STATIC,9,53,16,8
     LTEXT           "Meas",IDC_STATIC,29,53,16,8
     LTEXT           "Beat",IDC_STATIC,49,53,16,8
-    LTEXT           "：",IDC_STATIC,20,25,8,12
-    LTEXT           "：",IDC_STATIC,21,67,8,12
+    LTEXT           ":",IDC_STATIC,20,25,8,12
+    LTEXT           ":",IDC_STATIC,21,67,8,12
 END
 
 DLGPAN DIALOG DISCARDABLE  0, 0, 86, 83
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "範囲パンポット変更"
-FONT 9, "ＭＳ Ｐゴシック"
+FONT 9, "MS Shell Dlg"
 BEGIN
     EDITTEXT        IDE_TRACK,8,16,12,12
     EDITTEXT        IDE_MEAS1,36,16,16,12,ES_NUMBER
@@ -363,16 +360,16 @@ BEGIN
     LTEXT           "Track",IDC_STATIC,8,4,16,8
     LTEXT           "From",Meas,36,4,16,8
     LTEXT           "to",IDC_STATIC,64,4,8,8
-    LTEXT           "〜",IDC_STATIC,56,16,8,12
-    LTEXT           "：",IDC_STATIC,24,16,8,12
-    LTEXT           "値",IDC_STATIC,9,32,8,8
-    GROUPBOX        "加算／減算",IDC_STATIC,24,32,56,28
+    LTEXT           "~",IDC_STATIC,56,16,8,12
+    LTEXT           ":",IDC_STATIC,24,16,8,12
+    LTEXT           "Value",IDC_STATIC,9,32,8,8
+    GROUPBOX        "Add/Sub",IDC_STATIC,24,32,56,28
 END
 
 DLGTRANS DIALOG DISCARDABLE  0, 0, 86, 83
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "トランスポーズ"
-FONT 9, "ＭＳ Ｐゴシック"
+FONT 9, "MS Shell Dlg"
 BEGIN
     EDITTEXT        IDE_TRACK,8,16,12,12
     EDITTEXT        IDE_MEAS1,36,16,16,12,ES_NUMBER
@@ -385,16 +382,16 @@ BEGIN
     LTEXT           "Track",IDC_STATIC,8,4,16,8
     LTEXT           "From",Meas,36,4,16,8
     LTEXT           "to",IDC_STATIC,64,4,8,8
-    LTEXT           "〜",IDC_STATIC,56,16,8,12
-    LTEXT           "：",IDC_STATIC,24,16,8,12
-    LTEXT           "値",IDC_STATIC,8,33,8,8
-    GROUPBOX        "加算／減算",IDC_STATIC,24,32,56,28
+    LTEXT           "~",IDC_STATIC,56,16,8,12
+    LTEXT           ":",IDC_STATIC,24,16,8,12
+    LTEXT           "Vall",IDC_STATIC,8,33,8,8
+    GROUPBOX        "Add/Sub",IDC_STATIC,24,32,56,28
 END
 
 DLGVOLUME DIALOG DISCARDABLE  0, 0, 86, 83
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "範囲ボリューム変更"
-FONT 9, "ＭＳ Ｐゴシック"
+FONT 9, "MS Shell Dlg"
 BEGIN
     EDITTEXT        IDE_TRACK,8,16,12,12
     EDITTEXT        IDE_MEAS1,36,16,16,12,ES_NUMBER
@@ -407,16 +404,16 @@ BEGIN
     LTEXT           "Track",IDC_STATIC,8,4,16,8
     LTEXT           "From",Meas,36,4,16,8
     LTEXT           "to",IDC_STATIC,64,4,8,8
-    LTEXT           "〜",IDC_STATIC,56,16,8,12
-    LTEXT           "：",IDC_STATIC,24,16,8,12
-    LTEXT           "値",IDC_STATIC,8,34,8,8
-    GROUPBOX        "加算／減算",IDC_STATIC,24,32,56,28
+    LTEXT           "~",IDC_STATIC,56,16,8,12
+    LTEXT           ":",IDC_STATIC,24,16,8,12
+    LTEXT           "Val",IDC_STATIC,8,34,8,8
+    GROUPBOX        "Add/Sub",IDC_STATIC,24,32,56,28
 END
 
 DLGUSED DIALOG DISCARDABLE  0, 0, 175, 139
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "使用音譜数"
-FONT 9, "ＭＳ Ｐゴシック"
+FONT 9, "MS Shell Dlg"
 BEGIN
     DEFPUSHBUTTON   "Ok!",IDOK,60,120,56,14
     EDITTEXT        IDE_USE0,20,16,28,12,ES_READONLY | ES_NUMBER
@@ -443,24 +440,24 @@ BEGIN
     EDITTEXT        IDE_LEFT13,136,76,28,12,ES_READONLY | ES_NUMBER
     EDITTEXT        IDE_LEFT14,136,88,28,12,ES_READONLY | ES_NUMBER
     EDITTEXT        IDE_LEFT15,136,100,28,12,ES_READONLY | ES_NUMBER
-    LTEXT           "１",IDC_STATIC,8,18,8,8
-    LTEXT           "２",IDC_STATIC,8,30,8,8
-    LTEXT           "３",IDC_STATIC,8,42,8,8
-    LTEXT           "４",IDC_STATIC,8,54,8,8
-    LTEXT           "５",IDC_STATIC,8,66,8,8
-    LTEXT           "６",IDC_STATIC,8,78,8,8
-    LTEXT           "７",IDC_STATIC,8,90,8,8
-    LTEXT           "８",IDC_STATIC,8,102,8,8
-    LTEXT           "Ｑ",IDC_STATIC,92,18,8,8
-    LTEXT           "Ｗ",IDC_STATIC,92,30,8,8
-    LTEXT           "Ｅ",IDC_STATIC,92,42,8,8
-    LTEXT           "Ｒ",IDC_STATIC,92,54,8,8
-    LTEXT           "Ｔ",IDC_STATIC,92,66,8,8
-    LTEXT           "Ｙ",IDC_STATIC,92,78,8,8
-    LTEXT           "Ｕ",IDC_STATIC,92,90,8,8
-    LTEXT           "Ｉ",IDC_STATIC,92,102,8,8
-    LTEXT           "使用中",IDC_STATIC,20,4,24,8
-    LTEXT           "残り",IDC_STATIC,52,4,16,8
+    LTEXT           "1",IDC_STATIC,8,18,8,8
+    LTEXT           "2",IDC_STATIC,8,30,8,8
+    LTEXT           "3",IDC_STATIC,8,42,8,8
+    LTEXT           "4",IDC_STATIC,8,54,8,8
+    LTEXT           "5",IDC_STATIC,8,66,8,8
+    LTEXT           "6",IDC_STATIC,8,78,8,8
+    LTEXT           "7",IDC_STATIC,8,90,8,8
+    LTEXT           "8",IDC_STATIC,8,102,8,8
+    LTEXT           "Q",IDC_STATIC,92,18,8,8
+    LTEXT           "W",IDC_STATIC,92,30,8,8
+    LTEXT           "E",IDC_STATIC,92,42,8,8
+    LTEXT           "R",IDC_STATIC,92,54,8,8
+    LTEXT           "T",IDC_STATIC,92,66,8,8
+    LTEXT           "Y",IDC_STATIC,92,78,8,8
+    LTEXT           "U",IDC_STATIC,92,90,8,8
+    LTEXT           "I",IDC_STATIC,92,102,8,8
+    LTEXT           "Used",IDC_STATIC,20,4,24,8
+    LTEXT           "Remaining",IDC_STATIC,52,4,16,8
     EDITTEXT        IDE_LEFT0,52,16,28,12,ES_READONLY | ES_NUMBER
     EDITTEXT        IDE_LEFT1,52,28,28,12,ES_READONLY | ES_NUMBER
     EDITTEXT        IDE_LEFT2,52,40,28,12,ES_READONLY | ES_NUMBER
@@ -469,8 +466,8 @@ BEGIN
     EDITTEXT        IDE_LEFT5,52,76,28,12,ES_READONLY | ES_NUMBER
     EDITTEXT        IDE_LEFT6,52,88,28,12,ES_READONLY | ES_NUMBER
     EDITTEXT        IDE_LEFT7,52,100,28,12,ES_READONLY | ES_NUMBER
-    LTEXT           "使用中",IDC_STATIC,104,4,24,8
-    LTEXT           "残り",IDC_STATIC,136,4,16,8
+    LTEXT           "Used",IDC_STATIC,104,4,24,8
+    LTEXT           "Remaining",IDC_STATIC,136,4,16,8
     LTEXT           "Tr",IDC_STATIC,7,4,10,10
     LTEXT           "Tr",IDC_STATIC,92,4,10,10
 END
@@ -478,12 +475,12 @@ END
 DLGMEMO DIALOGEX 0, 0, 119, 117
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "バージョン情報"
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "了解!!",IDOK,39,95,40,18
-    CTEXT           "オルガーニャ  ver.2.1.1",IDC_STATIC,20,32,80,8
+    DEFPUSHBUTTON   "OK!!",IDOK,39,95,40,18
+    CTEXT           "Organya ver.2.1.1",IDC_STATIC,20,32,80,8
     LTEXT           "2014 / 10 / 19",IDC_STATIC,37,43,44,8
-    CTEXT           "Original Project By 開発室Ｐｉｘｅｌ",IDC_STATIC,2,57,
+    CTEXT           "Original Project By Studio Pixel",IDC_STATIC,2,57,
                     114,16,SS_CENTERIMAGE | SS_SUNKEN
     ICON            "ICON",ID_ICON_ORG,49,3,20,20,SS_NOTIFY,
                     WS_EX_DLGMODALFRAME
@@ -494,7 +491,7 @@ END
 DLGCOPY2 DIALOGEX 0, 0, 175, 145
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "セットコピー"
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     EDITTEXT        IDE_MEAS1_1,88,36,16,12,ES_NUMBER
     EDITTEXT        IDE_BEAT1_1,108,36,12,12,ES_NUMBER
@@ -510,47 +507,47 @@ BEGIN
     LTEXT           "Beat",IDC_STATIC,108,24,16,8
     LTEXT           "Meas",IDC_STATIC,128,24,16,8
     LTEXT           "Beat",IDC_STATIC,148,24,16,8
-    LTEXT           "〜",IDC_STATIC,120,40,8,8
-    LTEXT           "回数",IDC_STATIC,132,78,15,8
-    GROUPBOX        "コピー元",IDC_STATIC,84,11,84,41
-    GROUPBOX        "コピー先",IDC_STATIC,84,56,44,42
+    LTEXT           "~",IDC_STATIC,120,40,8,8
+    LTEXT           "Count",IDC_STATIC,132,78,15,8
+    GROUPBOX        "Copy Start",IDC_STATIC,84,11,84,41
+    GROUPBOX        "Copy End",IDC_STATIC,84,56,44,42
     LTEXT           "Drums",IDC_STATIC,44,12,20,8
     LTEXT           "Meas",IDC_STATIC,87,67,16,8
     LTEXT           "Beat",IDC_STATIC,106,67,16,8
-    CONTROL         "Tr １",IDC_USE0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 1",IDC_USE0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,24,29,10
-    CONTROL         "Tr ２",IDC_USE1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 2",IDC_USE1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,36,29,10
-    CONTROL         "Tr ３",IDC_USE2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 3",IDC_USE2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,48,29,10
-    CONTROL         "Tr ４",IDC_USE3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 4",IDC_USE3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,60,29,10
-    CONTROL         "Tr ５",IDC_USE4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 5",IDC_USE4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,76,29,10
-    CONTROL         "Tr ６",IDC_USE5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 6",IDC_USE5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,88,29,10
-    CONTROL         "Tr ７",IDC_USE6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 7",IDC_USE6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,100,29,10
-    CONTROL         "Tr ８",IDC_USE7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr 8",IDC_USE7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     12,112,29,10
-    CONTROL         "Tr Ｑ",IDC_USE8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr Q",IDC_USE8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,24,30,10
-    CONTROL         "Tr Ｗ",IDC_USE9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr W",IDC_USE9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,36,31,10
-    CONTROL         "Tr Ｅ",IDC_USE10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr E",IDC_USE10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,48,30,10
-    CONTROL         "Tr Ｒ",IDC_USE11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr R",IDC_USE11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,60,30,10
-    CONTROL         "Tr Ｔ",IDC_USE12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr T",IDC_USE12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,76,29,10
-    CONTROL         "Tr Ｙ",IDC_USE13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr Y",IDC_USE13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,88,29,10
-    GROUPBOX        "対象トラック",IDC_STATIC,4,0,72,144
-    CONTROL         "Tr Ｕ",IDC_USE14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    GROUPBOX        "Tracks to copy",IDC_STATIC,4,0,72,144
+    CONTROL         "Tr U",IDC_USE14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,100,30,10
-    CONTROL         "Tr Ｉ",IDC_USE15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+    CONTROL         "Tr I",IDC_USE15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     44,112,26,10
-    PUSHBUTTON      "ぜんぶ",IDC_SETCOPY_FULLCLICK,41,123,31,17,0,
+    PUSHBUTTON      "All",IDC_SETCOPY_FULLCLICK,41,123,31,17,0,
                     WS_EX_STATICEDGE
     PUSHBUTTON      "Current",IDC_SETCOPY_FULLCLICK2,9,123,31,17,0,
                     WS_EX_STATICEDGE
@@ -558,8 +555,8 @@ END
 
 DLGDEFAULT DIALOGEX 0, 0, 171, 267
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "パン／ボリューム初期値"
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+CAPTION "Pan/Volume Initial Values"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     EDITTEXT        IDC_PANPOT1,20,30,20,12,ES_AUTOHSCROLL | ES_NUMBER
     EDITTEXT        IDC_PANPOT2,20,45,20,12,ES_AUTOHSCROLL | ES_NUMBER
@@ -593,44 +590,44 @@ BEGIN
     EDITTEXT        IDC_VOLUME14,136,108,20,12,ES_AUTOHSCROLL | ES_NUMBER
     EDITTEXT        IDC_VOLUME15,136,123,20,12,ES_AUTOHSCROLL | ES_NUMBER
     EDITTEXT        IDC_VOLUME16,136,138,20,12,ES_AUTOHSCROLL | ES_NUMBER
-    PUSHBUTTON      "初期値データを読み込む",IDC_DEF_NOWLOAD,10,165,80,15
-    PUSHBUTTON      "初期値データを保存する",IDC_DEF_NOWSAVE,10,183,80,15
-    PUSHBUTTON      "全てﾄﾗｯｸ１の値に合わせる",IDC_BTN_SORT,13,221,91,15,0,
+    PUSHBUTTON      "Read Init Data Values",IDC_DEF_NOWLOAD,10,165,80,15
+    PUSHBUTTON      "Save Init Data Values",IDC_DEF_NOWSAVE,10,183,80,15
+    PUSHBUTTON      "Track 1 Values to All",IDC_BTN_SORT,13,221,91,15,0,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "ﾌﾟﾘｾｯﾄ1",IDC_PRESET1,111,221,31,16,WS_GROUP,
+    PUSHBUTTON      "Preset 1",IDC_PRESET1,111,221,31,16,WS_GROUP,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "Vol95%",IDC_PRESET2,14,239,27,16,WS_GROUP,
+    PUSHBUTTON      "Vol 95%",IDC_PRESET2,14,239,27,16,WS_GROUP,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "Panﾗﾝﾀﾞﾑ",IDC_PRESET3,46,239,37,16,WS_GROUP,
+    PUSHBUTTON      "Random Pan",IDC_PRESET3,46,239,37,16,WS_GROUP,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "Volﾗﾝﾀﾞﾑ",IDC_PRESET4,88,239,39,16,WS_GROUP,
+    PUSHBUTTON      "Random Vol",IDC_PRESET4,88,239,39,16,WS_GROUP,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "ﾘｾｯﾄ",IDC_PRESET5,132,239,27,16,WS_GROUP,
+    PUSHBUTTON      "Reset",IDC_PRESET5,132,239,27,16,WS_GROUP,
                     WS_EX_STATICEDGE
     DEFPUSHBUTTON   "Ok!",IDOK,104,163,60,21
-    PUSHBUTTON      "キャンセル",IDCANCEL,104,189,60,15
-    CTEXT           "パンポット¥n（０-６-12）",IDC_STATIC,15,5,30,15
-    CTEXT           "ボリューム¥n（０−254）",IDC_STATIC,45,5,35,20
-    CTEXT           "１",IDC_STATIC,5,32,8,10
-    CTEXT           "２",IDC_STATIC,5,47,8,10
-    CTEXT           "３",IDC_STATIC,5,62,8,10
-    CTEXT           "４",IDC_STATIC,5,77,8,10
-    CTEXT           "５",IDC_STATIC,5,95,8,10
-    CTEXT           "６",IDC_STATIC,5,110,8,10
-    CTEXT           "７",IDC_STATIC,5,125,8,10
-    CTEXT           "８",IDC_STATIC,5,140,8,10
-    CTEXT           "パンポット¥n（０-６-12）",IDC_STATIC,101,5,30,15
-    CTEXT           "ボリューム¥n（０−254）",IDC_STATIC,131,5,35,20
-    CTEXT           "Ｑ",IDC_STATIC,90,32,8,10
-    CTEXT           "Ｗ",IDC_STATIC,90,47,8,10
-    CTEXT           "Ｅ",IDC_STATIC,90,62,8,10
-    CTEXT           "Ｒ",IDC_STATIC,90,77,8,10
-    CTEXT           "Ｔ",IDC_STATIC,90,95,8,10
-    CTEXT           "Ｙ",IDC_STATIC,90,110,8,10
-    CTEXT           "Ｕ",IDC_STATIC,90,125,8,10
-    CTEXT           "Ｉ",IDC_STATIC,90,140,8,10
-    GROUPBOX        "ファイル操作 (*.pvi)",IDC_STATIC,5,155,91,47
-    GROUPBOX        "各種機能",IDC_STATIC,7,209,159,50
+    PUSHBUTTON      "Cancel",IDCANCEL,104,189,60,15
+    CTEXT           "Pan Pot\n(0-6-12)",IDC_STATIC,15,5,30,15
+    CTEXT           "Volume\n(0-254)",IDC_STATIC,45,5,35,20
+    CTEXT           "1",IDC_STATIC,5,32,8,10
+    CTEXT           "2",IDC_STATIC,5,47,8,10
+    CTEXT           "3",IDC_STATIC,5,62,8,10
+    CTEXT           "4",IDC_STATIC,5,77,8,10
+    CTEXT           "5",IDC_STATIC,5,95,8,10
+    CTEXT           "6",IDC_STATIC,5,110,8,10
+    CTEXT           "7",IDC_STATIC,5,125,8,10
+    CTEXT           "8",IDC_STATIC,5,140,8,10
+    CTEXT           "Pan Pot\n(0-6-12)",IDC_STATIC,101,5,30,15
+    CTEXT           "Volume\n(0-254)",IDC_STATIC,131,5,35,20
+    CTEXT           "Q",IDC_STATIC,90,32,8,10
+    CTEXT           "W",IDC_STATIC,90,47,8,10
+    CTEXT           "E",IDC_STATIC,90,62,8,10
+    CTEXT           "R",IDC_STATIC,90,77,8,10
+    CTEXT           "T",IDC_STATIC,90,95,8,10
+    CTEXT           "Y",IDC_STATIC,90,110,8,10
+    CTEXT           "U",IDC_STATIC,90,125,8,10
+    CTEXT           "I",IDC_STATIC,90,140,8,10
+    GROUPBOX        "File Operations (*.pvi)",IDC_STATIC,5,155,91,47
+    GROUPBOX        "Various Functions",IDC_STATIC,7,209,159,50
 END
 
 DLGHELP DIALOGEX 0, 0, 366, 329
@@ -646,7 +643,7 @@ END
 COPYBD DIALOGEX 0, 0, 540, 28
 STYLE WS_POPUP | WS_VISIBLE | WS_BORDER
 EXSTYLE WS_EX_TOOLWINDOW
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     PUSHBUTTON      "+1",IDC_CTB1,46,1,16,15,0,WS_EX_STATICEDGE
     PUSHBUTTON      "+2",IDC_CTB2,62,1,16,15,0,WS_EX_STATICEDGE
@@ -664,36 +661,36 @@ BEGIN
     PUSHBUTTON      "x2",IDC_PST2,356,1,16,15,0,WS_EX_CLIENTEDGE
     PUSHBUTTON      "x3",IDC_PST3,372,1,16,15,0,WS_EX_CLIENTEDGE
     PUSHBUTTON      "x4",IDC_PST4,388,1,16,15,0,WS_EX_CLIENTEDGE
-    PUSHBUTTON      "削除",IDC_DELETEBUTTON,439,1,24,15,0,WS_EX_CLIENTEDGE | 
+    PUSHBUTTON      "Del",IDC_DELETEBUTTON,439,1,24,15,0,WS_EX_CLIENTEDGE | 
                     WS_EX_STATICEDGE
     PUSHBUTTON      "",IDC_BTNCLOSE,518,1,19,7,BS_CENTER | NOT WS_TABSTOP
-    LTEXT           "オルガーニャ２",IDC_COPYNOTION,1,18,292,9
-    RTEXT           "コピペ回数",IDC_STATIC,305,5,33,10
-    RTEXT           "全トラック選択",IDC_STATIC,152,5,42,10
-    RTEXT           "現在のトラック",IDC_STATIC,1,5,43,10
+    LTEXT           "Organya 2",IDC_COPYNOTION,1,18,292,9
+    RTEXT           "Copy&Paste Count",IDC_STATIC,305,5,33,10
+    RTEXT           "All Tracks",IDC_STATIC,152,5,42,10//Select All Tracks
+    RTEXT           "Current Track",IDC_STATIC,1,5,43,10
     CTEXT           "Current",IDC_STATUS1,477,18,27,9,0,WS_EX_STATICEDGE
     CTEXT           "Grid",IDC_STATUS2,504,18,18,9,0,WS_EX_STATICEDGE
     CTEXT           "Drag",IDC_STATUS3,522,18,16,9,0,WS_EX_STATICEDGE
-    PUSHBUTTON      "挿入",IDC_INSERTBUTTON,414,1,24,15,0,WS_EX_CLIENTEDGE | 
+    PUSHBUTTON      "Ins",IDC_INSERTBUTTON,414,1,24,15,0,WS_EX_CLIENTEDGE | 
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "削除し詰める",IDC_DELETEBUTTON_2,463,1,49,15,0,
+    PUSHBUTTON      "Remove",IDC_DELETEBUTTON_2,463,1,49,15,0,
                     WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
     LTEXT           "",IDC_MESSAGE,296,18,180,9,0,WS_EX_STATICEDGE
 END
 
 IDD_DIALOGOPEN DIALOGEX 0, 0, 269, 171
 STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     LTEXT           "",1119,0,15,269,156
-    PUSHBUTTON      "現在のダイアログウィンドウのサイズを記憶させる",
+    PUSHBUTTON      "Remember the size of the current dialog window",
                     IDC_BUTTON1,0,0,173,15,0,WS_EX_STATICEDGE,HIDC_BUTTON1
 END
 
 DLGSWAP DIALOG DISCARDABLE  0, 0, 99, 45
 STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
 CAPTION "トラック入れ替え"
-FONT 9, "ＭＳ Ｐゴシック"
+FONT 9, "MS Shell Dlg"
 BEGIN
     EDITTEXT        IDE_TRACK1,8,17,12,12
     EDITTEXT        IDE_TRACK2,32,17,12,12
@@ -706,54 +703,54 @@ END
 
 IDD_MIDI DIALOGEX 0, 0, 285, 274
 STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
-FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    LTEXT           "繰り返し回数(&R):",IDC_STATIC,7,121,52,10
+    LTEXT           "&Repeat Count:",IDC_STATIC,7,121,52,10
     EDITTEXT        IDC_REPEAT,66,119,35,12,ES_AUTOHSCROLL | ES_NUMBER
-    LTEXT           "タイトル(&T):",IDC_STATIC,7,136,52,10
+    LTEXT           "&Title:",IDC_STATIC,7,136,52,10
     EDITTEXT        IDC_TITLE,66,134,184,12,ES_AUTOHSCROLL
-    LTEXT           "著作権表示(&A):",IDC_STATIC,7,151,52,10
+    LTEXT           "&Copyright:",IDC_STATIC,7,151,52,10
     EDITTEXT        IDC_AUTHOR,66,149,181,12,ES_AUTOHSCROLL
-    LTEXT           "(C)の文字, 発行年, 著作権所有者名 をご記入願います。",
+    LTEXT           "Fill in © symbol, publication year, and copyright owner's name.",
                     IDC_STATIC,66,164,205,10
-    PUSHBUTTON      "全部１にあわせる",IDC_ALL_SQUAREWAVE1,11,185,61,14,0,
+    PUSHBUTTON      "Track 1 Values to All",IDC_ALL_SQUAREWAVE1,11,185,61,14,0,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "全部 [16:ｵﾙｶﾞﾝ]",IDC_ALL_SQUAREWAVE2,77,185,61,14,0,
+    PUSHBUTTON      "All to [16:Organ]",IDC_ALL_SQUAREWAVE2,77,185,61,14,0,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "全部 [80:矩形波]",IDC_ALL_SQUAREWAVE3,143,185,61,14,0,
+    PUSHBUTTON      "All to [80:Square Wave]",IDC_ALL_SQUAREWAVE3,143,185,61,14,0,
                     WS_EX_STATICEDGE
-    PUSHBUTTON      "ﾗﾝﾀﾞﾑ",IDC_ALL_SQUAREWAVE4,209,185,61,14,0,
+    PUSHBUTTON      "Random",IDC_ALL_SQUAREWAVE4,209,185,61,14,0,
                     WS_EX_STATICEDGE
-    GROUPBOX        "プログラムチェンジ指定(&P):",IDC_STATIC,3,175,279,94
-    RTEXT           "１",IDC_STATIC,17,203,14,10
+    GROUPBOX        "&Program Changes:",IDC_STATIC,3,175,279,94
+    RTEXT           "1",IDC_STATIC,17,203,14,10
     COMBOBOX        IDC_MIDIPC1,35,201,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
-    RTEXT           "２",IDC_STATIC,17,220,14,10
+    RTEXT           "2",IDC_STATIC,17,220,14,10
     COMBOBOX        IDC_MIDIPC2,35,217,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
-    RTEXT           "３",IDC_STATIC,17,236,14,10
+    RTEXT           "3",IDC_STATIC,17,236,14,10
     COMBOBOX        IDC_MIDIPC3,35,233,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
-    RTEXT           "４",IDC_STATIC,17,252,14,10
+    RTEXT           "4",IDC_STATIC,17,252,14,10
     COMBOBOX        IDC_MIDIPC4,35,249,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
-    RTEXT           "５",IDC_STATIC,144,203,12,10
+    RTEXT           "5",IDC_STATIC,144,203,12,10
     COMBOBOX        IDC_MIDIPC5,159,201,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
-    RTEXT           "６",IDC_STATIC,144,220,12,10
+    RTEXT           "6",IDC_STATIC,144,220,12,10
     COMBOBOX        IDC_MIDIPC6,159,218,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
-    RTEXT           "７",IDC_STATIC,144,236,12,10
+    RTEXT           "7",IDC_STATIC,144,236,12,10
     COMBOBOX        IDC_MIDIPC7,159,234,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
-    RTEXT           "８",IDC_STATIC,144,252,12,10
+    RTEXT           "8",IDC_STATIC,144,252,12,10
     COMBOBOX        IDC_MIDIPC8,159,250,100,200,CBS_DROPDOWNLIST | 
                     CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
@@ -910,32 +907,20 @@ END
 
 ORGANYAMENU MENU DISCARDABLE 
 BEGIN
-    POPUP "ファイル (&F)"
+    POPUP "&File"
     BEGIN
-<<<<<<< HEAD
-        MENUITEM "新規作成(&N)...¥tCtrl+Alt+I", IDM_INIT
-        MENUITEM "開く (&O)...¥tCtrl+O",        IDM_LOAD
-        MENUITEM "独自のﾀﾞｲｱﾛｸﾞで開く(P)...¥tHome", IDM_LOAD2
+        MENUITEM "&New...\tCtrl+Alt+I", IDM_INIT
+        MENUITEM "&Open...\tCtrl+O",        IDM_LOAD
+        MENUITEM "O&pen (Custom dialog)...\tHome", IDM_LOAD2
         MENUITEM SEPARATOR
-        MENUITEM "上書き保存 (&S)¥tCtrl+S",     IDM_SAVEOVER
-        MENUITEM "別名で保存 (&W)...¥tShift+Ctrl+S", IDM_SAVENEW
+        MENUITEM "&Save\tCtrl+S",     IDM_SAVEOVER
+        MENUITEM "Save &As...\tShift+Ctrl+S", IDM_SAVENEW
         MENUITEM SEPARATOR
-        MENUITEM "▼ エクスポート",             ID_EXPORT, INACTIVE
-        MENUITEM "標準MIDIﾌｧｲﾙ(*.mid) (&M)...¥tCtrl+Alt+M", IDM_EXPORT_MIDI
-=======
-        MENUITEM "Create New(&N)...\tCtrl+Alt+I", IDM_INIT
-        MENUITEM "open (&O)...\tCtrl+O",        IDM_LOAD
-        MENUITEM "Open in your own dialog(P)...\tHome", IDM_LOAD2
-        MENUITEM SEPARATOR
-        MENUITEM "overwrite save (&S)\tCtrl+S",     IDM_SAVEOVER
-        MENUITEM "Save as a different name (&W)...\tShift+Ctrl+S", IDM_SAVENEW
-        MENUITEM SEPARATOR
-        MENUITEM "▼ export",             ID_EXPORT, INACTIVE
-        MENUITEM "standardMIDIFile(*.mid) (&M)...\tCtrl+Alt+M", IDM_EXPORT_MIDI
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "▼ Export",             ID_EXPORT, INACTIVE
+        MENUITEM "Standard &MIDI Format (*.mid)...\tCtrl+Alt+M", IDM_EXPORT_MIDI
         MENUITEM SEPARATOR
         MENUITEM SEPARATOR
-        MENUITEM "▼ 最近使ったファイル",       ID_MENUITEM40135, INACTIVE
+        MENUITEM "▼ Recent files:",       ID_MENUITEM40135, INACTIVE
         MENUITEM "1",                           IDM_RECENT1
         MENUITEM "2",                           IDM_RECENT2
         MENUITEM "3",                           IDM_RECENT3
@@ -947,194 +932,114 @@ BEGIN
         MENUITEM "9",                           IDM_RECENT9
         MENUITEM "0",                           IDM_RECENT0
         MENUITEM SEPARATOR
-        MENUITEM "オルガーニャを終了する(&Q)",  IDM_EXIT
+        MENUITEM "&Quit Organya",  IDM_EXIT
     END
-    POPUP "曲設定 (&S)"
+    POPUP "&Song Settings"
     BEGIN
-<<<<<<< HEAD
-        MENUITEM "波形・音色選択(&W)...¥tF1",   IDM_DLGWAVE
-        MENUITEM "テンポ・拍子属性(&T)...¥tF2", IDM_DLGSETTING
-        MENUITEM "パン／ボリューム初期値(R)...¥tF3", IDM_DLGDEFAULT
-=======
-        MENUITEM "Waveform / Tone color selection(&W)...\tF1",   IDM_DLGWAVE
-        MENUITEM "Tempo / beat attribute(&T)...\tF2", IDM_DLGSETTING
-        MENUITEM "Pan / volume initial value(R)...\tF3", IDM_DLGDEFAULT
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "&Waveform Selection...\tF1",   IDM_DLGWAVE
+        MENUITEM "&Tempo and Time Signatures...\tF2", IDM_DLGSETTING
+        MENUITEM "Pan/Vo&lume Initial Values...\tF3", IDM_DLGDEFAULT
         MENUITEM SEPARATOR
-        MENUITEM "音譜残量(&O)...",             IDM_DLGUSED
+        MENUITEM "&Remaining Space...",             IDM_DLGUSED//Remaining space for music
     END
-    POPUP "範囲編集 (&E)"
+    POPUP "Selection &Edit"
     BEGIN
-<<<<<<< HEAD
-        MENUITEM "元に戻す(&U)¥tCtrl+Z",        IDM_UNDO, GRAYED
-        MENUITEM "やり直す(&R)¥tCtrl+Y",        IDM_REDO, GRAYED
+        MENUITEM "&Undo\tCtrl+Z",        IDM_UNDO, GRAYED
+        MENUITEM "&Redo\tCtrl+Y",        IDM_REDO, GRAYED
         MENUITEM SEPARATOR
-        MENUITEM "すべて選択(&A)¥tCtrl+A",      IDM_SELECT_ALL
-        MENUITEM "選択範囲を解除(&K)¥tCtrl+D",  IDM_SELECT_RESET
-        MENUITEM SEPARATOR
-        MENUITEM SEPARATOR
-        MENUITEM "コピー(&C)...¥tCtrl+F2",      IDM_DLGCOPY
-        MENUITEM "セットコピー(&F)...¥tCtrl+F3", IDM_DLGCOPY2
-        MENUITEM SEPARATOR
-        MENUITEM "パンポット(&P)...¥tCtrl+F4",  IDM_DLGPAN
-        MENUITEM "ボリューム(&V)...¥tF4",       IDM_DLGVOL
-        MENUITEM "トランスポーズ(&T)...¥tShift+F4", IDM_DLGTRANS
-        MENUITEM SEPARATOR
-        MENUITEM "消去(&D)...¥tCtrl+Del",       IDM_DLGDELETE
-        MENUITEM "トラック入れ替え(&S)...¥tShift+Ctrl+F4", IDM_DLGSWAP
-=======
-        MENUITEM "Restore(&U)\tCtrl+Z",        IDM_UNDO, GRAYED
-        MENUITEM "Redo(&R)\tCtrl+Y",        IDM_REDO, GRAYED
-        MENUITEM SEPARATOR
-        MENUITEM "select all(&A)\tCtrl+A",      IDM_SELECT_ALL
-        MENUITEM "Cancel selection(&K)\tCtrl+D",  IDM_SELECT_RESET
+        MENUITEM "Select &All\tCtrl+A",      IDM_SELECT_ALL
+        MENUITEM "Select &None\tCtrl+D",  IDM_SELECT_RESET//Cancel selection
         MENUITEM SEPARATOR
         MENUITEM SEPARATOR
-        MENUITEM "copy(&C)...\tCtrl+F2",      IDM_DLGCOPY
-        MENUITEM "Set copy(&F)...\tCtrl+F3", IDM_DLGCOPY2
+        MENUITEM "&Copy...\tCtrl+F2",      IDM_DLGCOPY
+        MENUITEM "Copy Multiple...\tCtrl+F3", IDM_DLGCOPY2//Set Copy
         MENUITEM SEPARATOR
-        MENUITEM "Pan pot(&P)...\tCtrl+F4",  IDM_DLGPAN
-        MENUITEM "volume(&V)...\tF4",       IDM_DLGVOL
-        MENUITEM "Transpose(&T)...\tShift+F4", IDM_DLGTRANS
+        MENUITEM "&Pan Pot...\tCtrl+F4",  IDM_DLGPAN
+        MENUITEM "&Volume...\tF4",       IDM_DLGVOL
+        MENUITEM "&Transpose...\tShift+F4", IDM_DLGTRANS
         MENUITEM SEPARATOR
-        MENUITEM "Erase(&D)...\tCtrl+Del",       IDM_DLGDELETE
-        MENUITEM "Track replacement(&S)...\tShift+Ctrl+F4", IDM_DLGSWAP
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "&Delete...\tCtrl+Del",       IDM_DLGDELETE
+        MENUITEM "&Swap Tracks...\tShift+Ctrl+F4", IDM_DLGSWAP
     END
-    POPUP "VOL操作(&1)"
+    POPUP "Volume Operations (&1)"
     BEGIN
-        MENUITEM "既存NOTEに対して",            IDM_CT_L0, INACTIVE
-        MENUITEM "  (&1)上に凸(伸び)減衰 強",   IDM_CT_L1
-        MENUITEM "  (&2)上に凸(伸び)減衰 弱",   IDM_CT_L2
-        MENUITEM "  (&3)線形減衰",              IDM_CT_L3
-        MENUITEM "  (&4)下に凸(急な)減衰 弱",   IDM_CT_L4
-        MENUITEM "  (&5)下に凸(急な)減衰 強",   IDM_CT_L5
-        MENUITEM "  (&6)初期値",                IDM_CT_L6
-        MENUITEM "  (&7)Ｓ字曲線",              IDM_CT_L7
-        MENUITEM "  (&8)最後だけﾁｮｯﾄ減衰",      IDM_CT_L8
-        MENUITEM "  (&9)ビブラート減衰",        IDM_CT_L9
+        MENUITEM "For selection only:",            IDM_CT_L0, INACTIVE
+        MENUITEM "  (&1)Decay very slow",   IDM_CT_L1
+        MENUITEM "  (&2)Decay slow",   IDM_CT_L2
+        MENUITEM "  (&3)Decay linear",              IDM_CT_L3
+        MENUITEM "  (&4)Decay fast",   IDM_CT_L4
+        MENUITEM "  (&5)Decay very fast",   IDM_CT_L5
+        MENUITEM "  (&6)Initial Value",                IDM_CT_L6
+        MENUITEM "  (&7)S Shaped Curve",              IDM_CT_L7
+        MENUITEM "  (&8)Small decay at end",      IDM_CT_L8
+        MENUITEM "  (&9)Vibrato decay",        IDM_CT_L9
         MENUITEM SEPARATOR
-        MENUITEM "  (&0)ランダム",              IDM_CT_L10
-        MENUITEM "  (&1)始点-終点でｸﾞﾗﾃﾞｰｼｮﾝ",  IDM_CT_L11
-        MENUITEM "  (&2)下に凸増幅",            IDM_CT_L12
-        MENUITEM "  (&3)線形増幅",              IDM_CT_L13
-        MENUITEM "  (&4)未定義",                IDM_CT_L14, GRAYED
-        MENUITEM "  (&5)未定義",                IDM_CT_L15, GRAYED
-        MENUITEM "  (&6)未定義",                IDM_CT_L16, GRAYED
-        MENUITEM "  (&7)未定義",                IDM_CT_L17, GRAYED
-        MENUITEM "  (&8)未定義",                IDM_CT_L18, GRAYED
-        MENUITEM "  (&9)未定義",                IDM_CT_L19, GRAYED
+        MENUITEM "  (&0)Random",              IDM_CT_L10
+        MENUITEM "  (&1)Start-End Gradation",  IDM_CT_L11
+        MENUITEM "  (&2)Swell",            IDM_CT_L12
+        MENUITEM "  (&3)Swell linear",              IDM_CT_L13
+        MENUITEM "  (&4)Undefined",                IDM_CT_L14, GRAYED
+        MENUITEM "  (&5)Undefined",                IDM_CT_L15, GRAYED
+        MENUITEM "  (&6)Undefined",                IDM_CT_L16, GRAYED
+        MENUITEM "  (&7)Undefined",                IDM_CT_L17, GRAYED
+        MENUITEM "  (&8)Undefined",                IDM_CT_L18, GRAYED
+        MENUITEM "  (&9)Undefined",                IDM_CT_L19, GRAYED
     END
-    POPUP "VOL操作(&2)"
+    POPUP "Volume Operations (&2)"
     BEGIN
-<<<<<<< HEAD
-        MENUITEM "ﾀﾞﾐｰNOTE自動追加",            IDM_CT_S0, INACTIVE
-        MENUITEM "  (&1)上に凸(伸び)減衰 強¥tCtrl+1", IDM_CT_S1
-        MENUITEM "  (&2)上に凸(伸び)減衰 弱¥tCtrl+2", IDM_CT_S2
-        MENUITEM "  (&3)線形減衰¥tCtrl+3",      IDM_CT_S3
-        MENUITEM "  (&4)下に凸(急な)減衰 弱¥tCtrl+4", IDM_CT_S4
-        MENUITEM "  (&5)下に凸(急な)減衰 強¥tCtrl+5", IDM_CT_S5
-        MENUITEM "  (&6)初期値¥tCtrl+6",        IDM_CT_S6
-        MENUITEM "  (&7)Ｓ字曲線¥tCtrl+7",      IDM_CT_S7
-        MENUITEM "  (&8)最後だけﾁｮｯﾄ減衰¥tCtrl+8", IDM_CT_S8
-        MENUITEM "  (&9)ビブラート減衰¥tCtrl+9", IDM_CT_S9
+        MENUITEM "For all notes:",            IDM_CT_S0, INACTIVE
+        MENUITEM "  (&1)Decay very slow\tCtrl+1", IDM_CT_S1
+        MENUITEM "  (&2)Decay slow\tCtrl+2", IDM_CT_S2
+        MENUITEM "  (&3)Decay linear\tCtrl+3",      IDM_CT_S3
+        MENUITEM "  (&4)Decay fast\tCtrl+4", IDM_CT_S4
+        MENUITEM "  (&5)Decay very fast\tCtrl+5", IDM_CT_S5
+        MENUITEM "  (&6)Initial Value\tCtrl+6",        IDM_CT_S6
+        MENUITEM "  (&7)S Shaped Curve\tCtrl+7",      IDM_CT_S7
+        MENUITEM "  (&8)Small decay at end\tCtrl+8", IDM_CT_S8
+        MENUITEM "  (&9)Vibrato decay\tCtrl+9", IDM_CT_S9
         MENUITEM SEPARATOR
-        MENUITEM "  (&0)ランダム¥tCtrl+Alt+0",  IDM_CT_S10
-        MENUITEM "  (&1)始点-終点でｸﾞﾗﾃﾞｰｼｮﾝ¥tCtrl+Alt+1", IDM_CT_S11
-        MENUITEM "  (&2)下に凸増幅¥tCtrl+Alt+2", IDM_CT_S12
-        MENUITEM "  (&3)線形増幅¥tCtrl+Alt+3",  IDM_CT_S13
-        MENUITEM "  (&4)未定義",                IDM_CT_S14, GRAYED
-        MENUITEM "  (&5)未定義",                IDM_CT_S15, GRAYED
-        MENUITEM "  (&6)未定義",                IDM_CT_S16, GRAYED
-        MENUITEM "  (&7)未定義",                IDM_CT_S17, GRAYED
-        MENUITEM "  (&8)未定義",                IDM_CT_S18, GRAYED
-        MENUITEM "  (&9)未定義",                IDM_CT_S19, GRAYED
+        MENUITEM "  (&0)Random\tCtrl+Alt+0",  IDM_CT_S10
+        MENUITEM "  (&1)Start-End Gradation\tCtrl+Alt+1", IDM_CT_S11
+        MENUITEM "  (&2)Swell\tCtrl+Alt+2", IDM_CT_S12
+        MENUITEM "  (&3)Swell linear\tCtrl+Alt+3",  IDM_CT_S13
+        MENUITEM "  (&4)Undefined",                IDM_CT_S14, GRAYED
+        MENUITEM "  (&5)Undefined",                IDM_CT_S15, GRAYED
+        MENUITEM "  (&6)Undefined",                IDM_CT_S16, GRAYED
+        MENUITEM "  (&7)Undefined",                IDM_CT_S17, GRAYED
+        MENUITEM "  (&8)Undefined",                IDM_CT_S18, GRAYED
+        MENUITEM "  (&9)Undefined",                IDM_CT_S19, GRAYED
         MENUITEM SEPARATOR
-        MENUITEM "(&0)音符無しNOTEをｸﾘｱ¥tCtrl+0", IDM_CT_S20
-=======
-        MENUITEM "DummyNOTEAutomatic addition",            IDM_CT_S0, INACTIVE
-        MENUITEM "  (&1)Convex upward(Elongation)Attenuation strength\tCtrl+1", IDM_CT_S1
-        MENUITEM "  (&2)Convex upward(Elongation)Attenuation weak\tCtrl+2", IDM_CT_S2
-        MENUITEM "  (&3)Linear attenuation\tCtrl+3",      IDM_CT_S3
-        MENUITEM "  (&4)Convex downward(sudden)Attenuation weak\tCtrl+4", IDM_CT_S4
-        MENUITEM "  (&5)Convex downward(sudden)Attenuation strength\tCtrl+5", IDM_CT_S5
-        MENUITEM "  (&6)initial value\tCtrl+6",        IDM_CT_S6
-        MENUITEM "  (&7)S curve\tCtrl+7",      IDM_CT_S7
-        MENUITEM "  (&8)Just last chopped attenuation\tCtrl+8", IDM_CT_S8
-        MENUITEM "  (&9)Vibrato damping\tCtrl+9", IDM_CT_S9
-        MENUITEM SEPARATOR
-        MENUITEM "  (&0)random\tCtrl+Alt+0",  IDM_CT_S10
-        MENUITEM "  (&1)start point-Gradient at end point\tCtrl+Alt+1", IDM_CT_S11
-        MENUITEM "  (&2)Ambient amplification downward\tCtrl+Alt+2", IDM_CT_S12
-        MENUITEM "  (&3)Linear amplification\tCtrl+Alt+3",  IDM_CT_S13
-        MENUITEM "  (&4)undefined",                IDM_CT_S14, GRAYED
-        MENUITEM "  (&5)undefined",                IDM_CT_S15, GRAYED
-        MENUITEM "  (&6)undefined",                IDM_CT_S16, GRAYED
-        MENUITEM "  (&7)undefined",                IDM_CT_S17, GRAYED
-        MENUITEM "  (&8)undefined",                IDM_CT_S18, GRAYED
-        MENUITEM "  (&9)undefined",                IDM_CT_S19, GRAYED
-        MENUITEM SEPARATOR
-        MENUITEM "(&0)No noteNOTEClear\tCtrl+0", IDM_CT_S20
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "(&0)音符無しNOTEをｸﾘｱ\tCtrl+0", IDM_CT_S20
     END
     MENUITEM "|",                           IDM_DUMMY_TATE_SEPARATOR, GRAYED
-    POPUP "譜面操作(&O)"
+    POPUP "Music &Operations"
     BEGIN
-<<<<<<< HEAD
         MENUITEM "カレントトラック",            ID_MENUITEM40145, INACTIVE
-        MENUITEM "  パンを右にずらす(&R)¥tShift+Ctrl+R", IDM_CT_PAN_R
-        MENUITEM "  パンを左にずらす(&L)¥tShift+Ctrl+L", IDM_CT_PAN_L
-        MENUITEM "  パンを左右逆転(&G)¥tCtrl+Alt+R", IDM_CT_PAN_REVERSE
-        MENUITEM "  ボリュームを上げる(&H)¥tF11", IDM_CT_VOL_PLUS
-        MENUITEM "  ボリュームを下げる(&K)¥tF12", IDM_CT_VOL_MINUS
-        MENUITEM "  ボリュームを12.5%上げる(&I)¥tShift+Ctrl+F11", 
+        MENUITEM "  パンを右にずらす(&R)\tShift+Ctrl+R", IDM_CT_PAN_R
+        MENUITEM "  パンを左にずらす(&L)\tShift+Ctrl+L", IDM_CT_PAN_L
+        MENUITEM "  パンを左右逆転(&G)\tCtrl+Alt+R", IDM_CT_PAN_REVERSE
+        MENUITEM "  ボリュームを上げる(&H)\tF11", IDM_CT_VOL_PLUS
+        MENUITEM "  ボリュームを下げる(&K)\tF12", IDM_CT_VOL_MINUS
+        MENUITEM "  ボリュームを12.5%上げる(&I)\tShift+Ctrl+F11", 
                                                 IDM_CT_VOLWARIAI_UP
-        MENUITEM "  ボリュームを12.5%下げる(&J)¥tShift+Ctrl+F12", 
+        MENUITEM "  ボリュームを12.5%下げる(&J)\tShift+Ctrl+F12", 
                                                 IDM_CT_VOLWARIAI_DOWN
-        MENUITEM "  キーを高くする(&U)¥tShift+Ctrl+U", IDM_CT_TRANS_UP
-        MENUITEM "  キーを低くする(&D)¥tShift+Ctrl+D", IDM_CT_TRANS_DOWN
-        MENUITEM "  キーをオクターヴ上げる(&O)¥tCtrl+Alt+U", IDM_CT_OCT_UP
-        MENUITEM "  キーをオクターヴ下げる(&N)¥tCtrl+Alt+D", IDM_CT_OCT_DOWN
+        MENUITEM "  キーを高くする(&U)\tShift+Ctrl+U", IDM_CT_TRANS_UP
+        MENUITEM "  キーを低くする(&D)\tShift+Ctrl+D", IDM_CT_TRANS_DOWN
+        MENUITEM "  キーをオクターヴ上げる(&O)\tCtrl+Alt+U", IDM_CT_OCT_UP
+        MENUITEM "  キーをオクターヴ下げる(&N)\tCtrl+Alt+D", IDM_CT_OCT_DOWN
         MENUITEM SEPARATOR
         MENUITEM "メロディトラック全体",        ID_MENUITEM40146, INACTIVE
         MENUITEM "  パンを右にずらす(&R)",      IDM_ML_PAN_R
         MENUITEM "  パンを左にずらす(&L)",      IDM_ML_PAN_L
-        MENUITEM "  ボリュームを上げる(&U)¥tShift+F11", IDM_ML_VOL_PLUS
-        MENUITEM "  ボリュームを下げる(&D)¥tShift+F12", IDM_ML_VOL_MINUS
-        MENUITEM "  キーを高くする(&H)¥tShift+Ctrl+H", IDM_ML_TRANS_UP
-        MENUITEM "  キーを低くする(&K)¥tShift+Ctrl+N", IDM_ML_TRANS_DOWN
+        MENUITEM "  ボリュームを上げる(&U)\tShift+F11", IDM_ML_VOL_PLUS
+        MENUITEM "  ボリュームを下げる(&D)\tShift+F12", IDM_ML_VOL_MINUS
+        MENUITEM "  キーを高くする(&H)\tShift+Ctrl+H", IDM_ML_TRANS_UP
+        MENUITEM "  キーを低くする(&K)\tShift+Ctrl+N", IDM_ML_TRANS_DOWN
         MENUITEM SEPARATOR
         MENUITEM "ドラムトラック全体",          ID_MENUITEM40147, INACTIVE
-        MENUITEM "  ボリュームを上げる(&U)¥tCtrl+F11", IDM_DR_VOL_PLUS
-        MENUITEM "  ボリュームを下げる(&D)¥tCtrl+F12", IDM_DR_VOL_MINUS
-=======
-        MENUITEM "Current Track",            ID_MENUITEM40145, INACTIVE
-        MENUITEM "  Shift bread to the right(&R)\tShift+Ctrl+R", IDM_CT_PAN_R
-        MENUITEM "  Shift bread to the left(&L)\tShift+Ctrl+L", IDM_CT_PAN_L
-        MENUITEM "  Pan reversed right and left(&G)\tCtrl+Alt+R", IDM_CT_PAN_REVERSE
-        MENUITEM "  Raise the volume(&H)\tF11", IDM_CT_VOL_PLUS
-        MENUITEM "  Lower the volume(&K)\tF12", IDM_CT_VOL_MINUS
-        MENUITEM "  The volume12.5%increase(&I)\tShift+Ctrl+F11", 
-                                                IDM_CT_VOLWARIAI_UP
-        MENUITEM "  The volume12.5%To lower(&J)\tShift+Ctrl+F12", 
-                                                IDM_CT_VOLWARIAI_DOWN
-        MENUITEM "  Increase key(&U)\tShift+Ctrl+U", IDM_CT_TRANS_UP
-        MENUITEM "  Lower key(&D)\tShift+Ctrl+D", IDM_CT_TRANS_DOWN
-        MENUITEM "  Raise the key octave(&O)\tCtrl+Alt+U", IDM_CT_OCT_UP
-        MENUITEM "  Lower the key octave(&N)\tCtrl+Alt+D", IDM_CT_OCT_DOWN
-        MENUITEM SEPARATOR
-        MENUITEM "Melody whole track",        ID_MENUITEM40146, INACTIVE
-        MENUITEM "  Shift bread to the right(&R)",      IDM_ML_PAN_R
-        MENUITEM "  Shift bread to the left(&L)",      IDM_ML_PAN_L
-        MENUITEM "  Raise the volume(&U)\tShift+F11", IDM_ML_VOL_PLUS
-        MENUITEM "  Lower the volume(&D)\tShift+F12", IDM_ML_VOL_MINUS
-        MENUITEM "  Increase key(&H)\tShift+Ctrl+H", IDM_ML_TRANS_UP
-        MENUITEM "  Lower key(&K)\tShift+Ctrl+N", IDM_ML_TRANS_DOWN
-        MENUITEM SEPARATOR
-        MENUITEM "Entire drum track",          ID_MENUITEM40147, INACTIVE
-        MENUITEM "  Raise the volume(&U)\tCtrl+F11", IDM_DR_VOL_PLUS
-        MENUITEM "  Lower the volume(&D)\tCtrl+F12", IDM_DR_VOL_MINUS
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "  ボリュームを上げる(&U)\tCtrl+F11", IDM_DR_VOL_PLUS
+        MENUITEM "  ボリュームを下げる(&D)\tCtrl+F12", IDM_DR_VOL_MINUS
         MENUITEM SEPARATOR
         POPUP "分解能変更(&N)"
         BEGIN
@@ -1149,47 +1054,25 @@ BEGIN
     END
     POPUP "環境(&C)"
     BEGIN
-<<<<<<< HEAD
         MENUITEM "表示",                        IDM_DUMMY, INACTIVE
-        MENUITEM "   X軸方向拡大表示(&B)¥tF7",  IDM_LOUPE_PLUS
-        MENUITEM "   X軸方向縮小表示(&M)¥tF8",  IDM_LOUPE_MINUS
+        MENUITEM "   X軸方向拡大表示(&B)\tF7",  IDM_LOUPE_PLUS
+        MENUITEM "   X軸方向縮小表示(&M)\tF8",  IDM_LOUPE_MINUS
         MENUITEM "   縮小表示時、音符の頭を目立たせる(&O)", IDM_NOTE_ENLARGE
-        MENUITEM "   全てのトラックを表示 (ゴースト表示)¥tCtrl+F9", 
+        MENUITEM "   全てのトラックを表示 (ゴースト表示)\tCtrl+F9", 
                                                 IDM_DRAWDOUBLE
-        MENUITEM "   Trackごとに音符のy座標を少しずらす(&T)¥tShift+F9", 
+        MENUITEM "   Trackごとに音符のy座標を少しずらす(&T)\tShift+F9", 
                                                 IDM_SLIDEOVERLAPNOTES
         MENUITEM SEPARATOR
         MENUITEM "ウィンドウ・ダイアログ",      IDM_DUMMY, INACTIVE
-        MENUITEM "   範囲選択オペレータ表示／非表示(&V)¥tF9", 
-=======
-        MENUITEM "display",                        IDM_DUMMY, INACTIVE
-        MENUITEM "   XExpanded in the axial direction(&B)\tF7",  IDM_LOUPE_PLUS
-        MENUITEM "   XAxial reduction display(&M)\tF8",  IDM_LOUPE_MINUS
-        MENUITEM "   Make note heads stand out at reduced display(&O)", IDM_NOTE_ENLARGE
-        MENUITEM "   Show all tracks (Ghost display)\tCtrl+F9", 
-                                                IDM_DRAWDOUBLE
-        MENUITEM "   TrackFor each noteyMove coordinates slightly(&T)\tShift+F9", 
-                                                IDM_SLIDEOVERLAPNOTES
-        MENUITEM SEPARATOR
-        MENUITEM "Window dialog",      IDM_DUMMY, INACTIVE
-        MENUITEM "   Range selection operator display / hide(&V)\tF9", 
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "   範囲選択オペレータ表示／非表示(&V)\tF9", 
                                                 IDM_EZCOPYVISIBLE
         MENUITEM "   終了時に確認ﾒｯｾｰｼﾞを表示(&S)", IDM_CHANGEFINISH
         MENUITEM SEPARATOR
-<<<<<<< HEAD
         MENUITEM "操作",                        IDM_DUMMY, INACTIVE
-        MENUITEM "   ｸﾞﾘｯﾄﾞ(拍)単位で選択(&G)¥tCtrl+G", IDM_GRIDMODE
-        MENUITEM "   常にｶﾚﾝﾄﾄﾗｯｸがﾀｰｹﾞｯﾄ(&C)¥tCtrl+T", IDM_ALWAYS_CURRENT
-        MENUITEM "   ﾄﾞﾗｯｸﾞで音符を伸ばす(&E)¥tCtrl+Alt+F9", IDM_DRAGMODE
-        MENUITEM "   音符の頭ｸﾘｯｸで長さを変える(&O)¥tCtrl+Alt+F10", 
-=======
-        MENUITEM "operation",                        IDM_DUMMY, INACTIVE
-        MENUITEM "   Grid(Beat)Select by unit(&G)\tCtrl+G", IDM_GRIDMODE
-        MENUITEM "   Always the current track target(&C)\tCtrl+T", IDM_ALWAYS_CURRENT
-        MENUITEM "   Extend notes with drag(&E)\tCtrl+Alt+F9", IDM_DRAGMODE
-        MENUITEM "   Change the length by clicking the head of the note(&O)\tCtrl+Alt+F10", 
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "   ｸﾞﾘｯﾄﾞ(拍)単位で選択(&G)\tCtrl+G", IDM_GRIDMODE
+        MENUITEM "   常にｶﾚﾝﾄﾄﾗｯｸがﾀｰｹﾞｯﾄ(&C)\tCtrl+T", IDM_ALWAYS_CURRENT
+        MENUITEM "   ﾄﾞﾗｯｸﾞで音符を伸ばす(&E)\tCtrl+Alt+F9", IDM_DRAGMODE
+        MENUITEM "   音符の頭ｸﾘｯｸで長さを変える(&O)\tCtrl+Alt+F10", 
                                                 IDM_PRESSNOTE
         MENUITEM "   演奏中に鍵盤を弾けるようにする(&P)", IDM_ENABLEPLAYING
         MENUITEM SEPARATOR
@@ -1206,11 +1089,7 @@ BEGIN
     END
     POPUP "メモ(&M)"
     BEGIN
-<<<<<<< HEAD
-        MENUITEM "簡易ヘルプ(&H)...¥tCtrl+Alt+H", IDM_DLGHELP
-=======
-        MENUITEM "Simple help(&H)...\tCtrl+Alt+H", IDM_DLGHELP
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
+        MENUITEM "簡易ヘルプ(&H)...\tCtrl+Alt+H", IDM_DLGHELP
         MENUITEM SEPARATOR
         MENUITEM "バージョン情報(&V)...",       IDM_DLGMEMO
     END
@@ -1333,22 +1212,8 @@ BEGIN
     BEGIN
         BLOCK "041104b0"
         BEGIN
-<<<<<<< HEAD
-            VALUE "Comments", "つくりが粗い部分は見逃してください。¥0"
-            VALUE "CompanyName", "余計な味がしない。¥0"
-            VALUE "FileDescription", "Organya Twei¥0"
-            VALUE "FileVersion", "2.1.1¥0"
-            VALUE "InternalName", "¥0"
-            VALUE "LegalCopyright", "Copyright (C) 2005-2014 Pixel and Rxo Inverse¥0"
-            VALUE "LegalTrademarks", "¥0"
-            VALUE "OriginalFilename", "Org211.exe¥0"
-            VALUE "PrivateBuild", "¥0"
-            VALUE "ProductName", "オルガーニャ２¥0"
-            VALUE "ProductVersion", "2.1.1¥0"
-            VALUE "SpecialBuild", "¥0"
-=======
-            VALUE "Comments", "Please miss the coarse part.\0"
-            VALUE "CompanyName", "There is no unnecessary taste.\0"
+            VALUE "Comments", "Please overlook the rough parts.\0"
+            VALUE "CompanyName", "No extra flavors\0"
             VALUE "FileDescription", "Organya Twei\0"
             VALUE "FileVersion", "2.1.1\0"
             VALUE "InternalName", "\0"
@@ -1356,10 +1221,9 @@ BEGIN
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "Org211.exe\0"
             VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Orgagna 2\0"
+            VALUE "ProductName", "Organya 2\0"
             VALUE "ProductVersion", "2.1.1\0"
             VALUE "SpecialBuild", "\0"
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
         END
     END
     BLOCK "VarFileInfo"
@@ -1578,25 +1442,14 @@ BEGIN
     IDS_ERROR_TRACK         "Error (Track)"
     IDS_ERROR_TRANS         "Error (Trans)"
     IDS_ERROR_VOLUME        "Error (Volume)"
-<<<<<<< HEAD
     IDS_ERROR_WAIT          "Error (ウエイト)"
     IDS_INFO_CLEAR          "消去しました"
     IDS_INFO_INITIALIZE     "真っ白になったぜ。"
-    IDS_INFO_MEMORY         "長時間の使用により、ノート（音符）がメモリ上に¥n散乱してしまいます。（譜面順とメモリ順は異なっている）¥nこの関数はノートを譜面の順番に¥n並べ換えます。¥n尚、データをロードし直しても同じ効果が得られます。¥n実行しますか？"
+    IDS_INFO_MEMORY         "長時間の使用により、ノート（音符）がメモリ上に\n散乱してしまいます。（譜面順とメモリ順は異なっている）\nこの関数はノートを譜面の順番に\n並べ換えます。\n尚、データをロードし直しても同じ効果が得られます。\n実行しますか？"
     IDS_INFO_NARABEKAE      "並べ替え・再構築しました。"
     IDS_INFO_SAME_FILE      "同じ名前のファイルがあります"
     IDS_INFO_TITLE_FREQ     "お知らせ (周波数)"
     IDS_NOTIFY_EXIT         "保存していない内容は破棄されます。終了しますか？"
-=======
-    IDS_ERROR_WAIT          "Error (weight)"
-    IDS_INFO_CLEAR          "It deleted."
-    IDS_INFO_INITIALIZE     "I got pure white."
-    IDS_INFO_MEMORY         "By using it for a long time, note (note) on memory\nIt will be scattered. (Score order and memory order are different)\nThis function places notes in order of music\nI will rearrange them.\nThe same effect can be obtained even by reloading the data.\nDo you want to do it?"
-    IDS_INFO_NARABEKAE      "We sorted and rebuilt."
-    IDS_INFO_SAME_FILE      "There is a file with the same name"
-    IDS_INFO_TITLE_FREQ     "Notice (frequency)"
-    IDS_NOTIFY_EXIT         "Unsaved content will be discarded. Do you want to end it?"
->>>>>>> aa3fc8d... Now compiles with resource file. .rct is a placeholder name (im not too good with makefiles, maybe someone can help)
 END
 
 STRINGTABLE DISCARDABLE 

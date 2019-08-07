@@ -7,15 +7,9 @@
 #include "util.h"
 
 
-<<<<<<< HEAD
 long play_p;//現在再生位置（キャンバス）
 NOTELIST *np[MAXTRACK];//現在再生準備の音符
-long now_leng[MAXMELODY] = {NULL};//再生中音符の長さ
-=======
-long play_p;//Current playback position (canvas)
-NOTELIST *np[MAXTRACK];//Currently ready to play notes
-long now_leng[MAXMELODY] = {0};//Length of note during playback
->>>>>>> 82529e4... All files compile to objects
+long now_leng[MAXMELODY] = {0};//再生中音符の長さ
 extern HWND hDlgPlayer;
 void OrgData::PlayData(void)
 {
@@ -46,17 +40,10 @@ void OrgData::PlayData(void)
 		}
 		if(now_leng[i] > 0)now_leng[i]--;
 	}
-<<<<<<< HEAD
 	//ドラムの再生
-	for(i = MAXMELODY; i < MAXTRACK; i++){
+	for(int i = MAXMELODY; i < MAXTRACK; i++){
 		if(np[i] != NULL &&play_p == np[i]->x ){//音が来た。
 			if(np[i]->y != KEYDUMMY){//ならす
-=======
-	//Playing the drum
-	for(int i = MAXMELODY; i < MAXTRACK; i++){
-		if(np[i] != NULL &&play_p == np[i]->x ){//The sound came.
-			if(np[i]->y != KEYDUMMY){//Normal slow
->>>>>>> 82529e4... All files compile to objects
 				if(mute[i] == 0)PlayDramObject(np[i]->y,1,i-MAXMELODY);
 			}
 			if(np[i]->pan != PANDUMMY)ChangeDramPan(np[i]->pan,i-MAXMELODY);

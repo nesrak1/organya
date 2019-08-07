@@ -30,7 +30,7 @@ typedef struct{
 	char line;
 	char dot;
 }GRID;
-GRID grid[NUMGRIDA] = {
+GRID grid[11] = {
 	{"☆自由設定",0,0},
 	{"４拍：４分割",4,4},
 	{"４拍：３分割",4,3},
@@ -43,7 +43,7 @@ GRID grid[NUMGRIDA] = {
 	{"４拍：１２分割",4,12},
 	{"５拍：４分割",5,4},
 };
-constexpr int NUMGRIDA = sizeof(grid) / sizeof(GRID);
+int NUMGRIDA = 11;//sizeof(grid) / sizeof(GRID);
 //IDS_GRID_STRINGに!区切りで追加すること。ここの文字列はﾀﾞﾐｰです。
 
 int check_pipi[NUMGRID] ={

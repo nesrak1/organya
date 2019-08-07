@@ -2,3 +2,5 @@ organya.ini
 source/*.o
 source/*.d
 source/*.rct
+source/.vs/*
+source/Debug/*
