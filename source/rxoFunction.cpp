@@ -445,7 +445,7 @@ void ShowMemoryState(){ //デバッグ用
 void SortMusicNote(void)
 {
 	int a;
-	//a = MessageBox(hWnd,"長時間の使用により、ノート（音符）がメモリ上に¥n散乱してしまいます。（譜面順とメモリ順は異なっている）¥nこの関数はノートを譜面の順番に¥n並べ換えます。¥n尚、データをロードし直しても同じ効果が得られます。¥n実行しますか？","使い方と目的",MB_OKCANCEL|MB_ICONQUESTION|MB_DEFBUTTON2);	// 2014.10.19 D
+	//a = MessageBox(hWnd,"長時間の使用により、ノート（音符）がメモリ上に\n散乱してしまいます。（譜面順とメモリ順は異なっている）\nこの関数はノートを譜面の順番に\n並べ換えます。\n尚、データをロードし直しても同じ効果が得られます。\n実行しますか？","使い方と目的",MB_OKCANCEL|MB_ICONQUESTION|MB_DEFBUTTON2);	// 2014.10.19 D
 	a = msgbox(hWnd,IDS_INFO_MEMORY,IDS_USAGE,MB_OKCANCEL|MB_ICONQUESTION|MB_DEFBUTTON2);	// 2014.10.19 A
 	if(a == IDOK){
 		org_data.SortNotes();
@@ -888,9 +888,9 @@ bool AutoSavePVIFile()
 	int t,r;
 	for(t=0;t<MAXTRACK;t++){
 		r = (int)org_data.def_pan[t];
-		fprintf(fp,"%d¥n",r);
+		fprintf(fp,"%d\n",r);
 		r = (int)org_data.def_volume[t];
-		fprintf(fp,"%d¥n",r);
+		fprintf(fp,"%d\n",r);
 	}
 	fclose(fp);
 	delete [] PVIFile;
@@ -947,7 +947,7 @@ int AllocMessageStringBuffer(void)
 				if(*p == '!')flg++; else flg = 0;
 				if(flg >= 2)break;
 			}
-			//!!のとき、頭から!を¥0に置換
+			//!!のとき、頭から!を\0に置換
 			if(flg == 2){
 				for(p = ptr ; *p != 0 ; p++)if(*p == '!')*p = 0;
 			}
@@ -958,7 +958,7 @@ int AllocMessageStringBuffer(void)
 		}
 	}
 
-	//lpstrFilterについては"!"を¥0に変換する必要アリ。
+	//lpstrFilterについては"!"を\0に変換する必要アリ。
 	//for(ptr = MessageString[108]; *ptr != 0; ptr++)if(*ptr == '!')*ptr = 0;
 	//for(ptr = MessageString[109]; *ptr != 0; ptr++)if(*ptr == '!')*ptr = 0;
 	//for(ptr = MessageString[110]; *ptr != 0; ptr++)if(*ptr == '!')*ptr = 0;

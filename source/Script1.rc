@@ -1546,10 +1546,10 @@ BEGIN
     IDS_STRING105           "選択されている範囲を"
     IDS_STRING106           "全トラックの選択されている範囲を"
     IDS_GRID_STRING         "☆自由設定!４拍：４分割!４拍：３分割!３拍：４分割!３拍：３分割!４拍：６分割!３拍：６分割!４拍：２分割!４拍：８分割!４拍：12分割!５拍：４分割!!"
-    IDS_STRING108           "パン／ボリューム初期値データ[*.pvi]!*.pvi!全ての形式 [*.*]!*.*!!"
-    IDS_STRING109           "OrganyaData[*.org]!*.org!全ての形式 [*.*]!*.*!!"
-    IDS_STRING110           "標準MIDIファイル[*.mid]!*.mid!全ての形式 [*.*]!*.*!!"
-    IDS_STRING111           "OrganyaData[*.org]!*.org!全ての形式 [*.*]!*.*!!"
+    IDS_STRING108           "パン／ボリューム初期値データ[*.pvi]!*.pvi!All Formats [*.*]!*.*!!"
+    IDS_STRING109           "OrganyaData[*.org]!*.org!All Formats [*.*]!*.*!!"
+    IDS_STRING110           "標準MIDIファイル[*.mid]!*.mid!All Formats [*.*]!*.*!!"
+    IDS_STRING111           "OrganyaData[*.org]!*.org!All Formats [*.*]!*.*!!"
 END
 
 STRINGTABLE DISCARDABLE 

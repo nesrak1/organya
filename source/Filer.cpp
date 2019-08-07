@@ -44,7 +44,7 @@ char GetFileNameSave(HWND hwnd,char *title)
 	ofn.lStructSize = sizeof(OPENFILENAME);
 	ofn.hwndOwner   = hwnd;
 	ofn.hInstance   = hInst;
-	//ofn.lpstrFilter = "OrganyaData[*.org]¥0*.org¥0全ての形式 [*.*]¥0*.*¥0¥0";	// 2014.10.19 D
+	//ofn.lpstrFilter = "OrganyaData[*.org]\0*.org\0全ての形式 [*.*]\0*.*\0\0";	// 2014.10.19 D
 	ofn.lpstrFilter = MessageString[IDS_STRING109];	// 2014.10.19 A
 	ofn.lpstrFile   = music_file;
 	ofn.nMaxFile    = MAX_PATH;
@@ -184,7 +184,7 @@ char GetFileNameMIDI(HWND hwnd,char *title, char *filename)
 	ofn.lStructSize = sizeof(OPENFILENAME);
 	ofn.hwndOwner   = hwnd;
 	ofn.hInstance   = hInst;
-	//ofn.lpstrFilter = "標準MIDIファイル[*.mid]¥0*.mid¥0全ての形式 [*.*]¥0*.*¥0¥0";	// 2014.10.19 D
+	//ofn.lpstrFilter = "標準MIDIファイル[*.mid]\0*.mid\0全ての形式 [*.*]\0*.*\0\0";	// 2014.10.19 D
 	ofn.lpstrFilter = MessageString[IDS_STRING110];	// 2014.10.19 A
 	ofn.lpstrFile   = filename;
 	ofn.nMaxFile    = MAX_PATH;
@@ -267,12 +267,12 @@ char GetFileNameLoad(HWND hwnd,char *title, int OpenType)
 	ofn.lStructSize = sizeof(OPENFILENAME);
 	ofn.hwndOwner   = hwnd;
 	ofn.hInstance   = hInst;
-	//ofn.lpstrFilter = "OrganyaData[*.org]¥0*.org¥0全ての形式 [*.*]¥0*.*¥0¥0";	// 2014.10.19 D
+	//ofn.lpstrFilter = "OrganyaData[*.org]\0*.org\0全ての形式 [*.*]\0*.*\0\0";	// 2014.10.19 D
 	ofn.lpstrFilter = MessageString[IDS_STRING111];	// 2014.10.19 A
 	ofn.lpstrFile   = music_file;
 	ofn.nMaxFile    = MAX_PATH;
 	ofn.lpstrTitle  = title;
-	ofn.Flags       = OFN_CREATEPROMPT | OFN_HIDEREADONLY ;
+	ofn.Flags       = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY ;
 	if(OpenType==1){
 		ofn.Flags       = OFN_CREATEPROMPT | OFN_HIDEREADONLY |OFN_EXPLORER | 
 						OFN_ENABLESIZING | OFN_ENABLEHOOK |     //フックプロシージャを使う
