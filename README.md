@@ -9,7 +9,7 @@ This version does not use the original drum sounds from Cave Story._
 This is not use MIDI device.  
 This original library was created by [Studio Pixel](http://studiopixel.sakura.ne.jp/) from 1999, and was used in 'Cave Story'.
 
-<img src='http://www5b.biglobe.ne.jp/~kiss-me/aji/img/org2_1.png' width=60% height=60%>
+<img src='https://user-images.githubusercontent.com/12544505/62743591-9c855800-ba08-11e9-8f97-21671b288e54.png' width=60% height=60%>
 
 ## &#x1F352; Introduction
 
