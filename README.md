@@ -2,6 +2,10 @@
 
 **A music sequencer for classic video game**  
 
+_This fork is for a more accurate (emphasis on 'more') English Translation with help from Google/Bing Translate and Bavi_H's 2.1.0 translation.
+Compilation was tested in Visual Studio 2019.
+This version does not use the original drum sounds from Cave Story._
+
 This is not use MIDI device.  
 This original library was created by [Studio Pixel](http://studiopixel.sakura.ne.jp/) from 1999, and was used in 'Cave Story'.
 
