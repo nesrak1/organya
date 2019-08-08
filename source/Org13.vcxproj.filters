@@ -261,4 +261,42 @@
     <CustomBuild Include=".\help.html" />
     <CustomBuild Include=".\Wave\Wave.dat" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Bitmap\button_track_5.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_6.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_7.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_8.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_Q.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_W.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_E.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_R.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_T.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_Y.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_U.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bitmap\button_track_I.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

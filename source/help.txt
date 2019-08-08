@@ -1,4 +1,4 @@
-Organya 2 (Zwei)   Ver2.1.0   Simple Help
+Organya 2 (Zwei)   Ver2.1.1   Simple Help
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
   Basic usage is the same as "Organya 1" developed by Mr. Pixel.
@@ -14,6 +14,8 @@ Organya 2 (Zwei)   Ver2.1.0   Simple Help
   Mr. Pixel's occasional guidance in the BBS helped me modify Organya,
   with this dependence on help with anything it has been released.
 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  In the last few years, the motivation to produce has been high in the spring and autumn months.
 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 << Important changes and notes >>
@@ -257,6 +259,10 @@ Organya 2 (Zwei)   Ver2.1.0   Simple Help
 
 
 # Revision History 
+
+  2.1.1  2014/10/19  Fixed a bug when selecting number 0 in the recently used files
+                     Use String Table to display messages (only implemented halfway)
+                     Other minor fixes
 
   2.1.0  2014/05/31  Added Insert and Remove functions
                      Added Export to Standard MIDI Format function

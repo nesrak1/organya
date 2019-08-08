@@ -14,7 +14,10 @@ However, due to a change in my private life, it became inactive for a long time.
 
 -----
 
-首謀です。
+In 1999, [Studio Pixel](http://studiopixel.sakura.ne.jp/) produced the song composition software Organya for "Cave Story".
+>Basically, it is a tool used in the studio, so it is not very common. However, in rare cases, there is a person who says "I like shabby sound for whatever reason" and if they want to compose with it, this is the perfect tool.
+
+With the world knowing the development of "Cave Story", which increased the demand of Organya, and the same for the opionion for how to manage the source code, I have made the repository public.
 
 1999年に[開発室Pixel](http://studiopixel.sakura.ne.jp/)にて制作、後に「洞窟物語」にて使用されたオルガーニャ音源の作曲ソフトです。  
 >基本的には開発室内で使うツールなので、あまり一般的とは言えませんが、まれに｢なぜかショボイ音が好き｣と言う人がいて、更に｢その音で作曲したい｣というのならこのツールはウッテツケです☆  

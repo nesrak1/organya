@@ -259,6 +259,20 @@
   <ItemGroup>
     <Text Include=".\help.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Bitmap\button_track_5.bmp" />
+    <None Include="Bitmap\button_track_6.bmp" />
+    <None Include="Bitmap\button_track_7.bmp" />
+    <None Include="Bitmap\button_track_8.bmp" />
+    <None Include="Bitmap\button_track_E.bmp" />
+    <None Include="Bitmap\button_track_I.bmp" />
+    <None Include="Bitmap\button_track_Q.bmp" />
+    <None Include="Bitmap\button_track_R.bmp" />
+    <None Include="Bitmap\button_track_T.bmp" />
+    <None Include="Bitmap\button_track_U.bmp" />
+    <None Include="Bitmap\button_track_W.bmp" />
+    <None Include="Bitmap\button_track_Y.bmp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
