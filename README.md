@@ -54,8 +54,8 @@ I use that development software purchased 20 years ago in a virtual machine.
 
 # &#x1F34E; Usage
 
-If you only use Organya you need only Org211.exe .  
-Execute ```Org211.exe``` file.
+If you only use Organya you need only organya.exe .  
+Execute ```organya.exe``` file.
 
 
 
